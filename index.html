@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#130b0a">
+  <meta name="description" content="Daddy Polls: the unofficial Worst R5 of Server 192 poll. Cast your vote… if you can.">
+  <title>Daddy Polls | Worst R5 of Server 192</title>
+  <style>
+    :root { color-scheme:dark; --red:#ff2929; --gold:#e8b45b; }
+    * { box-sizing:border-box; }
+    html { min-height:100%; background:#100909; }
+    body { margin:0; min-height:100vh; color:#fff; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:radial-gradient(ellipse at 50% 15%,#492018 0,#1a0d0b 42%,#090606 100%); }
+    .page { width:min(100%,620px); margin:0 auto; padding:14px 14px max(26px,env(safe-area-inset-bottom)); }
+    .hero { position:relative; height:clamp(210px,57vw,330px); border:1px solid #7c4c2c; border-radius:18px; overflow:hidden; box-shadow:0 10px 35px #000b,inset 0 0 0 1px #f6c16a33; background:#21100d; }
+    .hero img { width:100%; height:100%; display:block; object-fit:cover; object-position:center 38%; filter:brightness(.76) saturate(.95); }
+    .hero:after { content:""; position:absolute; inset:35% 0 0; background:linear-gradient(transparent,#120908 96%); pointer-events:none; }
+    .brand { text-align:center; margin:13px 0 4px; color:#d9d9d9; font-weight:1000; letter-spacing:.18em; font-size:clamp(13px,3.4vw,17px); text-shadow:0 2px 8px #000; }
+    h1 { margin:0; text-align:center; font-size:clamp(28px,8vw,48px); line-height:.98; letter-spacing:-.045em; font-weight:1000; text-transform:uppercase; text-shadow:0 3px 0 #6c0909,0 7px 18px #000; }
+    h1 span { display:block; color:var(--red); font-size:1.13em; }
+    .sub { text-align:center; margin:10px 0 18px; color:#e4c9b1; font-size:14px; font-weight:650; }
+    .poll-shell { border:1px solid #773b2d; border-radius:18px; padding:13px; background:linear-gradient(145deg,#25110fdd,#0c0808f5); box-shadow:0 10px 28px #0009,inset 0 1px #ffffff12; }
+    .poll-label { text-align:center; color:#d8b88d; text-transform:uppercase; font-size:11px; font-weight:900; letter-spacing:.16em; margin:2px 0 12px; }
+    .candidates { display:grid; grid-template-columns:1fr; gap:10px; }
+    .candidate { width:100%; min-height:64px; border-radius:13px; border:2px solid #ff4646; color:#fff; background:linear-gradient(100deg,#310b0b,#160808 60%,#360d0d); box-shadow:0 0 12px #ff202055,inset 0 1px #ffffff16; display:flex; align-items:center; justify-content:flex-start; gap:13px; padding:12px 16px; text-align:left; font-size:clamp(16px,4.7vw,20px); font-weight:850; line-height:1.15; touch-action:manipulation; -webkit-tap-highlight-color:transparent; cursor:pointer; }
+    .candidate:active { transform:scale(.99); }
+    .candidate:disabled { cursor:default; opacity:1; }
+    .radio { flex:0 0 27px; height:27px; border:3px solid #fff; border-radius:50%; box-shadow:0 0 8px #ff4646; }
+    .name { flex:1; }
+    .alliance { color:#ffd05e; font-size:.82em; white-space:nowrap; }
+    .candidate.viper-revealed { border-color:#ffd36c; color:#211006; background:linear-gradient(100deg,#ffd36c,#d99a36); box-shadow:0 0 22px #ffc34d99; }
+    .candidate.viper-revealed .radio { border-color:#38200a; box-shadow:none; }
+    .candidate.viper-revealed .alliance { color:#38200a; }
+    .foot { text-align:center; color:#987f70; font-size:11px; margin:14px 6px 0; }
+    .result { display:none; margin-top:16px; padding:22px 16px; text-align:center; border:2px solid var(--gold); border-radius:16px; background:linear-gradient(145deg,#3b100d,#160807); box-shadow:0 0 24px #ff3a2855; }
+    .result.show { display:block; animation:pop .35s ease-out; }
+    .result h2 { margin:0 0 8px; color:#ffd06b; font-size:26px; }
+    .result p { margin:7px 0; line-height:1.45; }
+    .again { margin-top:12px; border:1px solid #d7a35b; background:#29100d; color:#fff; border-radius:10px; padding:11px 18px; font-weight:800; font-size:15px; }
+    @keyframes pop { from { opacity:0; transform:translateY(8px) scale(.97); } to { opacity:1; transform:none; } }
+    @media (min-width:520px) { .candidates { grid-template-columns:1fr 1fr; } .candidate { min-height:76px; } }
+    @media (prefers-reduced-motion:reduce) { *,*:before,*:after { animation:none!important; transition:none!important; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-label="Daddy relaxing on a leather couch with brandy">
+      <img src="file_000000002d908208bc5f7cb39b697b20.png" alt="Daddy relaxing on a leather couch with a glass of brandy">
+    </section>
+    <div class="brand">LAST Z · SURVIVAL SHOOTER · SERVER 192</div>
+    <h1>Daddy Polls <span>Worst R5</span> of Server 192</h1>
+    <p class="sub">An important community investigation. Cast your vote… if you can.</p>
+
+    <section class="poll-shell" aria-label="Poll choices">
+      <div class="poll-label">Choose your candidate</div>
+      <div class="candidates" id="candidates">
+        <button class="candidate" type="button"><span class="radio"></span><span class="name">Cpgeek</span><span class="alliance">BFM</span></button>
+        <button class="candidate" type="button"><span class="radio"></span><span class="name">Rogue Bhai Hood</span><span class="alliance">KNT</span></button>
+        <button class="candidate" type="button"><span class="radio"></span><span class="name">Ignaciooooooooo</span><span class="alliance">BMR1</span></button>
+        <button class="candidate" type="button"><span class="radio"></span><span class="name">ViprendraClan</span><span class="alliance">CoRE</span></button>
+        <button class="candidate" type="button"><span class="radio"></span><span class="name">Doll Hood</span><span class="alliance">YUO</span></button>
+        <button class="candidate" type="button"><span class="radio"></span><span class="name">Wrath of Mave</span><span class="alliance">MYTH</span></button>
+      </div>
+      <div class="result" id="result" role="status" aria-live="polite">
+        <h2>VOTE SUCCESSFULLY CAST!</h2>
+        <p>Your vote for <strong>VIPRENDRA CLAN</strong> has been recorded.</p>
+        <p>Thank you for helping Server 192 make the obvious choice.</p>
+        <p><strong>Daddy approves.</strong></p>
+        <button class="again" id="again" type="button">Vote again</button>
+      </div>
+    </section>
+    <p class="foot">A completely unofficial Daddy Polls production. No R5s were harmed in the making of this poll.</p>
+  </main>
+  <script>
+    (() => {
+      const board = document.getElementById('candidates');
+      const result = document.getElementById('result');
+      const again = document.getElementById('again');
+      let voteCast = false;
+      let lastShuffle = 0;
+
+      function shuffleCandidates() {
+        const buttons = [...board.querySelectorAll('.candidate')];
+        for (let i = buttons.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [buttons[i], buttons[j]] = [buttons[j], buttons[i]];
+        }
+        buttons.forEach(button => board.appendChild(button));
+      }
+
+      board.querySelectorAll('.candidate').forEach(button => {
+        button.addEventListener('pointerenter', event => {
+          if (event.pointerType !== 'mouse' || voteCast) return;
+          const now = Date.now();
+          if (now - lastShuffle < 220) return;
+          lastShuffle = now;
+          shuffleCandidates();
+        });
+
+        button.addEventListener('click', () => {
+          if (voteCast) return;
+          voteCast = true;
+
+          // Shuffle every option, then turn the exact button clicked into the winning choice.
+          shuffleCandidates();
+          button.innerHTML = '<span class="radio"></span><span class="name">ViprendraClan</span><span class="alliance">CoRE</span>';
+          button.classList.add('viper-revealed');
+          button.setAttribute('aria-label', 'ViprendraClan selected');
+
+          board.querySelectorAll('.candidate').forEach(other => {
+            other.disabled = true;
+          });
+
+          result.classList.add('show');
+          result.scrollIntoView({ behavior:'smooth', block:'nearest' });
+        });
+      });
+
+      again.addEventListener('click', () => {
+        window.location.reload();
+      });
+    })();
+  </script>
+</body>
+</html>
